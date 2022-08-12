@@ -4,10 +4,10 @@
     padding:0;
     font-family: 'Montserrat', sans-serif;    
 }
+
 html,
 body {
-  width: 100%;
-  height: 100%;
+  width: 100%;  
 }
 
 ul, li {
@@ -18,33 +18,39 @@ a, a:visited {
     text-decoration: none;
     cursor: pointer;
 }
+
 body {
     background-image: url('img/bg.jpg');
     background-repeat: no-repeat;    
     background-position: center;
     background-size: cover;
 }
+
 .container {
-    max-width: 1200px;
+    max-width: 1200px;    
     padding: 0 15px;
-    margin: 0 auto;
+    margin: 15px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius:15px;
 }
+
 h1 {
     margin-top: 50px;
     font-size: 30px;
     color: rgb(196, 207, 31);
 }
+
 .container_wrapper {
     padding-top: 50px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
+
 .list_items {
     flex: 0 0 200px;
     margin: 80px 15px;
@@ -53,6 +59,7 @@ h1 {
     flex-direction: column;
     gap: 15px;
 }
+
 .list_btn {
     padding: 15px;
     border: none;
@@ -66,16 +73,19 @@ h1 {
     text-transform: uppercase;
     transition: 0.3s all;    
 }
+
 .list_btn:hover {
     color: rgb(94, 42, 12);
     background-color: rgb(187, 196, 69);
 }
+
 .content {
     flex: 0 1 1000px;
     margin: 35px 15px;
     display: flex;
     flex-direction: column;
 }
+
 .content_title{
     text-transform: uppercase;
     text-align: center;
@@ -84,13 +94,44 @@ h1 {
     color: rgb(94, 42, 12);
     padding-bottom: 15px;
 }
+
 .content_img {
     width: 100%;
     max-height: 550px;
     padding-bottom: 15px;
 }
+
 .content_descr {
     font-size: 16px;
     line-height: 18px;
     padding-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 18px auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 30px;        
+    }
+
+    .container_wrapper {
+        padding-top: 0;
+        flex-direction: column;
+    }
+
+    .list_items {
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 20px 15px;
+    }
+
+    .content {
+        flex: 0 1 auto;
+        margin: 10px 15px;
+    }
 }
