@@ -50,7 +50,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     createListHtml(sevenWonders);
     
-    /************************************************************************************ */
     function createMainContent (key) { 
         content.innerHTML = '';  
         const titleContent = document.createElement('h2');
@@ -68,9 +67,7 @@ window.addEventListener("DOMContentLoaded", () => {
         descrContent.innerText = key.descr;
         content.append(descrContent);          
         
-    }      
-    
-    
+    }     
 
    function changeContentByTitle(obj) {
     let keysNames = Object.values(obj);   
@@ -89,15 +86,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });        
       }      
     
-    }   
-        
-    changeContentByTitle(sevenWonders);
-    
-    
+    }           
+    changeContentByTitle(sevenWonders); 
 });
-
-
-
-
-
     
