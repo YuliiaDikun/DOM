@@ -76,7 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const btns = document.querySelectorAll('.list_btn'); 
 
-    for(let i = 0; i < btns.length; i++){
+    for(let i = 0; i < btns.length; i++) {
         
         btns[i].addEventListener('click', (e) => {
             e.preventDefault();            
