@@ -41,13 +41,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const list = document.querySelector(".list_items");
     const content = document.querySelector(".content");
     
-    
-    
-    function createListHtml(obj) {
-        Object.values(obj).forEach((key) => {
-            list.innerHTML += `<li class="list_item"><button class="list_btn">${key.title}</button></li>`;
-        });        
-    }
+    const createListHtml = (allMyWonders) => {
+         Object.values(allMyWonders).forEach((key, i) => {
+            list.innerHTML += `<li class="list_item"><button class="list_btn"> ${i+1}. ${key.title}</button></li>`;
+        });  
+    };
+   
     createListHtml(sevenWonders);
     
     function createMainContent (key) { 
