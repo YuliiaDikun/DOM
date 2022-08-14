@@ -45,10 +45,12 @@ window.addEventListener("DOMContentLoaded", () => {
          Object.values(allMyWonders).forEach((key) => {
             let listItem = document.createElement('li');
             let btn = document.createElement('button');
+            
             listItem.classList.add("list_item");
             btn.classList.add("list_btn");
             btn.innerText = key.title;
             listItem.append(btn);
+
             list.append(listItem);            
         });  
     };
@@ -76,18 +78,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
    function changeContentByTitle(allMyWonders) {
     let keysNames = Object.values(allMyWonders);   
-
+    
     createMainContent(keysNames[0]);
 
-    const btns = document.querySelectorAll('.list_btn'); 
-
-        btns.forEach((btn, i) => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-                createMainContent(keysNames[i]);
-            });
+    function buttonEvent (e) {
+        const btnName = e.target.innerText.toLowerCase(); 
+        
+        keysNames.filter((wonder) => {
+           if (btnName === wonder.title) {            
+               return createMainContent(wonder);
+           }
         });
-    }
+    }         
+
+    list.addEventListener('click', buttonEvent);      
+        
+    } 
+
     changeContentByTitle(sevenWonders);
 
 });
