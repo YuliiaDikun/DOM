@@ -42,8 +42,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const content = document.querySelector(".content");
     
     const createListHtml = (allMyWonders) => {
-         Object.values(allMyWonders).forEach((key, i) => {
-            list.innerHTML += `<li class="list_item"><button class="list_btn"> ${i+1}. ${key.title}</button></li>`;
+         Object.values(allMyWonders).forEach((key) => {
+            let listItem = document.createElement('li');
+            let btn = document.createElement('button');
+            listItem.classList.add("list_item");
+            btn.classList.add("list_btn");
+            btn.innerText = key.title;
+            listItem.append(btn);
+            list.append(listItem);            
         });  
     };
    
