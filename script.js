@@ -68,24 +68,21 @@ window.addEventListener("DOMContentLoaded", () => {
         
     }     
 
-   function changeContentByTitle(obj) {
-    let keysNames = Object.values(obj);   
+   function changeContentByTitle(allMyWonders) {
+    let keysNames = Object.values(allMyWonders);   
 
     createMainContent(keysNames[0]);
 
     const btns = document.querySelectorAll('.list_btn'); 
 
-    for(let i = 0; i < btns.length; i++) {
-        
-        btns[i].addEventListener('click', (e) => {
-            e.preventDefault();            
-                       
-            createMainContent(keysNames[i]);        
-           
-        });        
-      }      
-    
-    }           
-    changeContentByTitle(sevenWonders); 
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                createMainContent(keysNames[i]);
+            });
+        });
+    }
+    changeContentByTitle(sevenWonders);
+
 });
     
