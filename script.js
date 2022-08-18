@@ -90,10 +90,10 @@ window.addEventListener("DOMContentLoaded", () => {
     createMainContent(keysNames[0]);
 
     function buttonEvent (e) {
-        const btnName = e.target.innerText.toLowerCase(); 
+        const btnName = e.target.id; 
         
         keysNames.filter((wonder) => {
-           if (btnName === wonder.title) {            
+           if (btnName === wonder.id) {            
                return createMainContent(wonder);
            }
         });
