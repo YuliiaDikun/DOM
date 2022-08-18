@@ -48,25 +48,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const list = document.querySelector(".list_items");
     const content = document.querySelector(".content");
     
-    const createListHtml = (allMyWonders) => {
-        Object.values(allMyWonders).forEach((key) => {
-            let listItem = document.createElement('li');
-            let btn = document.createElement('button');
-            
-            listItem.classList.add("list_item");
-            btn.classList.add("list_btn");
-            btn.id = key.id;
-            btn.innerText = key.title;
-            listItem.append(btn);
-
-            list.append(listItem);            
-        });  
-    };
+    function createListHtml(obj) {
+        Object.values(obj).forEach((key) => {
+            list.innerHTML += `<li class="list_item">
+                               <button data-id="${key.id}" class="list_btn">${key.title}</button>
+                               </li>`;
+        });        
+    }   
    
     createListHtml(sevenWonders);
     
-    const createMainContent  = (key) => { 
-        content.innerHTML = '';  
+    const createMainContent  = (key) => {         
         content.innerHTML = `<h2 class="content_title">${key.title}</h2>
                              <img src="${key.img}" alt="Photo of ${key.title}" class="content_img">
                              <p class="content_descr">${key.descr}</p>`;       
@@ -78,7 +70,7 @@ window.addEventListener("DOMContentLoaded", () => {
     createMainContent(keysNames[0]);
 
     function buttonEvent (e) {
-        const btnName = e.target.id; 
+        const btnName = e.target.dataset.id; 
         
         keysNames.filter((wonder) => {
            if (btnName === wonder.id) {            
