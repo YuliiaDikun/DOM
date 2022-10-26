@@ -70,11 +70,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   list.insertAdjacentHTML('beforeend', btnMarkup);
 
-  const createMainContent = key => {
+  function createMainContent(key) {
     content.innerHTML = `<h2 class="content_title">${key.title}</h2>
                              <img src="${key.img}" alt="Photo of ${key.title}" class="content_img width="800" ">
                              <p class="content_descr">${key.descr}</p>`;
-  };
+  }
 
   function changeContentByID(allMyWonders) {
     let keysNames = Object.values(allMyWonders);
